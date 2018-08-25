@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+نتائج المباريات
+{% endblock %}
+{% load static %}
+
+{% block content %}
+    <div align="center"><img src="{% static 'images/ic_game_score.png' %}" class="image"></img>
+        {% include 'add_score.html' %}</div>
+
+
+
+    {% for score in scores %}
+
+        <div align="center">
+            <h3>{{ score.date|date:'Y - dS - M' }}</h3>
+
+            <h2>نتيجة مباراة {{ score.team1 }} و {{ score.team2 }}</h2>
+
+            <h3>{{ score.first_team_score }} : {{ score.second_team_score }} </h3>
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

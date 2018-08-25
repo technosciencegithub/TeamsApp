@@ -1,0 +1,14 @@
+body {
+    background-image: url('../images/bg_pattern.png');
+
+}
+.link1{
+   color:argb(183, 183, 183,255);
+}
+.image {
+    width: 20%;
+    }
+
+.container-fluid {
+    direction: rtl;
+}

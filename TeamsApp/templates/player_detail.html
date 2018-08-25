@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    تفاصيل اللاعب
+{% endblock %}
+
+{% block content %}
+
+    <div align="center">
+
+        <img src="{% static 'images/ic_player.png' %}" class="image"></img>
+
+        <div style="background:#8DDB4D">
+            <br>{% if player.is_captain %}
+            <h2>{{ player.name }} قائد {{ player.team }}</h2>
+            {% else %}
+            <h2>{{ player.name }} من {{ player.team }}</h2>
+            {% endif %}
+            <h3>رقم اللاعب هو {{ player.number }}</h3>
+            <h3>عمر اللاعب {{ player.age }}</h3>
+            <h3>موضع اللاعب: {{ player.get_position_in_field_display }}</h3>
+            <br>
+
+
+</div>
+
+    </div>
+
+{% endblock %}

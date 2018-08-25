@@ -1,0 +1,27 @@
+
+{% load crispy_forms_tags %}
+
+        <form method="post">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      إضافة نتيحة مباراة
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body" style="background:#9E9E9E;">
+                    {% csrf_token %}
+                    {% crispy form %}
+                    <br>
+                    <input type="submit" class="btn btn-primary" value="إضافة" />
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </form>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+تفاصيل الفريق
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<div align="center">
+<img src="{% static 'images/ic_team.png' %}" class="image"></img>
+<h2>{{ team.name }}</h2>
+<p>{{ team.details }}</p>
+
+{% for player in team.player_set.all %}
+<a href="/player/{{ player.name }}">
+    <h3>{{ player.name }}</h3>
+</a>
+{% endfor %}
+</div>
+{% endblock %}
